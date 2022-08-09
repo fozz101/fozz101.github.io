@@ -1,7 +1,26 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import me from "./me.png";
+import { useState } from "react";
+import Education from "./components/Education";
+import Work from "./components/Work";
+import Programming from "./components/Programming";
+import Projects from "./components/Projects";
 function App() {
+  const [education, setEducation] = useState(true);
+  const [workHistory, setWorkHistory] = useState(false);
+  const [programming, setProgramming] = useState(false);
+  const [projects, setProjects] = useState(false);
+  function SetAllFalse() {
+    setEducation(false);
+    setWorkHistory(false);
+    setProgramming(false);
+    setProjects(false);
+  }
+  function ChangeState(func1, state1) {
+    SetAllFalse();
+    func1(state1);
+  }
   return (
     <div className="App">
       <div className="herosection px-10 py-5">
@@ -75,6 +94,87 @@ function App() {
                 </span>
               </span>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="resume-outer-section d-flex flex-column">
+        <span className="about-me-text">Resume</span>
+        <span className="why-text-sub">My Formal Bio Details</span>
+        <div
+          className="resume-new-section row"
+          style={{ width: "70%", marginInline: "auto", height: "400px" }}
+        >
+          <div className="col-lg-4 col-md-4 resume-left-section d-flex px-0 shadow-lg flex-row">
+            <div className="d-flex flex-column bg-new text-white">
+              <span className="icons-span">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </span>
+              <span className="icons-span">
+                <i class="fa-solid fa-briefcase"></i>
+              </span>
+              <span className="icons-span">
+                <i class="fa-solid fa-code"></i>
+              </span>
+              <span className="icons-span">
+                <i class="fa-solid fa-list-check"></i>
+              </span>
+            </div>
+            <div className="d-flex flex-column">
+              <span
+                className={
+                  education === false
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
+                onClick={() => {
+                  ChangeState(setEducation, true);
+                }}
+              >
+                Education
+              </span>
+              <span
+                className={
+                  workHistory === false
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
+                onClick={() => {
+                  ChangeState(setWorkHistory, true);
+                }}
+              >
+                Work
+              </span>
+              <span
+                className={
+                  programming === false
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
+                onClick={() => {
+                  ChangeState(setProgramming, true);
+                }}
+              >
+                Programming
+              </span>
+              <span
+                className={
+                  projects === false
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
+                onClick={() => {
+                  ChangeState(setProjects, true);
+                }}
+              >
+                Projects
+              </span>
+            </div>
+          </div>
+          <div className="col-lg-8 col-md-4 resume-right-section">
+            {education === true && <Education />}
+            {workHistory === true && <Work />}
+            {programming === true && <Programming />}
+            {projects === true && <Projects />}
           </div>
         </div>
       </div>
