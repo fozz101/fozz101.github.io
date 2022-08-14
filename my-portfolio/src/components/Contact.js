@@ -1,10 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/contact.css";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
+  require("dotenv").config();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const templateParams = {
+      from_name: name + " " + email,
+      message: message,
+    };
+    console.log(process.env);
+    emailjs
+      .send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_PUBLIC_KEY,
+        process.env.REACT_APP_USER_ID
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+  };
+
   return (
     <div className="test">
       <div className="contact-me-card row">
@@ -22,7 +50,11 @@ export default function Contact() {
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12 left-contact my-auto">
-          <div className="d-flex flex-column card-contact-right">
+          <form
+            className="d-flex flex-column card-contact-right"
+            ref={form}
+            onSubmit={sendEmail}
+          >
             <div className="input-group my-3 d-flex flex-column">
               <label>Name</label>
               <input
@@ -41,7 +73,7 @@ export default function Contact() {
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
-                type="text"
+                type="email"
                 className="input-groups"
               ></input>
             </div>
@@ -57,9 +89,13 @@ export default function Contact() {
               ></textarea>
             </div>
             <div className="input-group my-3 d-flex flex-column">
-              <button className="btn btn-success">Send</button>
+              <input
+                type="submit"
+                className="btn btn-success"
+                value="Send"
+              ></input>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

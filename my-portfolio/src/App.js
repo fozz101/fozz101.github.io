@@ -45,13 +45,45 @@ function App() {
       >
         <span className="brand-name"> Fozz101</span>
         <div className="d-flex flex-rows">
-          <span className="mx-4 nav-items">Home </span>
-          <span className="mx-4 nav-items">About me</span>
-          <span className="mx-4 nav-items">Resume </span>
-          <span className="mx-4 nav-items">Contact me</span>
+          <a
+            href="#home"
+            className="mx-4 nav-items"
+            onClick={() => {
+              setOpenNav(false);
+            }}
+          >
+            Home{" "}
+          </a>
+          <a
+            href="#aboutme"
+            className="mx-4 nav-items"
+            onClick={() => {
+              setOpenNav(false);
+            }}
+          >
+            AboutMe
+          </a>
+          <a
+            href="#resume"
+            className="mx-4 nav-items"
+            onClick={() => {
+              setOpenNav(false);
+            }}
+          >
+            Resume{" "}
+          </a>
+          <a
+            href="#contactme"
+            className="mx-4 nav-items"
+            onClick={() => {
+              setOpenNav(false);
+            }}
+          >
+            ContactMe
+          </a>
         </div>
       </nav>
-      <div className="herosection px-9 py-2">
+      <div className="herosection px-9 py-2" id="home">
         <div className="herosection-2 row justify-content-center">
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="d-flex flex-column justify-content-center Im-text-section">
@@ -66,8 +98,12 @@ function App() {
                 operations
               </span>
               <div className="d-flex flex-row justify-content-center py-3">
-                <button className="btn-hire-me">Hire me</button>
-                <button className="btn-resume-me">Get Resume</button>
+                <a href="#contactme" className="btn-hire-me">
+                  Hire me
+                </a>
+                <a href="" className="btn-resume-me" target="_blank">
+                  Get Resume
+                </a>
               </div>
             </div>
           </div>
@@ -84,7 +120,10 @@ function App() {
       </div>
       <div className="about-me-section aboutme-inside my-5">
         <div className="d-flex flex-column">
-          <span className="about-me-text"> About me</span>
+          <span className="about-me-text" id="aboutme">
+            {" "}
+            About me
+          </span>
           <span className="why-text-sub"> Why Choose me ?</span>
           <div className="row justify-content-center shadow-lg my-5">
             <div className="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
@@ -119,7 +158,9 @@ function App() {
         </div>
       </div>
       <div className="resume-outer-section d-flex flex-column">
-        <span className="about-me-text">Resume</span>
+        <span className="about-me-text" id="resume">
+          Resume
+        </span>
         <span className="why-text-sub">My Formal Bio Details</span>
         <div
           className="resume-new-section row"
@@ -199,7 +240,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="contact-me-part">
+      <div className="contact-me-part" id="contactme">
         <div className="relative-bg"></div>
       </div>
       <div className="contact-inner-part d-flex flex-column">

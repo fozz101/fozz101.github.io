@@ -4,7 +4,12 @@
   --secondary-app-color: #001528;
   --standout-color: #ff5823;
 }
-
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  color: var(--standout-color) !important;
+}
 .App {
 }
 
