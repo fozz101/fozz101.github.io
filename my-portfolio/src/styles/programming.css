@@ -1,5 +1,5 @@
 .progress-some {
-  background: red;
+  background: var(--standout-color);
   height: 20px;
   width: 200px;
 }

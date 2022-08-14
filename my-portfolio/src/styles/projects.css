@@ -1,6 +1,6 @@
 .university-name {
   font-family: "Ubuntu";
-  color: red;
+  color: var(--standout-color);
   font-size: 1.4rem;
   font-weight: 800;
 }

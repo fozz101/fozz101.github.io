@@ -1,0 +1,35 @@
+.contact-me-card {
+  background: linear-gradient(
+    -90deg,
+    var(--primary-app-color),
+    var(--secondary-app-color)
+  );
+  clip-path: circle(50% at 50% 50%);
+  width: 80%;
+  box-shadow: 10px 10px 63px 4px rgb(243 240 240);
+  height: 500px;
+  margin-inline: auto;
+}
+.get-in-touch {
+  color: #fff;
+  font-family: "Ubuntu";
+  font-weight: 700;
+  font-size: 2rem;
+}
+.input-groups {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.card-contact-right {
+  background: #e9e9eb;
+  /* box-shadow: 10px 3px 33px 4px rgb(243 240 240); */
+  border-radius: 20px;
+  width: 60%;
+  padding: 24px;
+}
+
+contact-inner-part {
+  padding-block: 118px;
+}

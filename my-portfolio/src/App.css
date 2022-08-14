@@ -2,7 +2,7 @@
 :root {
   --primary-app-color: #02203c;
   --secondary-app-color: #001528;
-  --standout-color: #fffb00;
+  --standout-color: #ff5823;
 }
 
 .App {
@@ -93,7 +93,7 @@
   font-size: 1.3rem;
   font-family: "Ubuntu";
   color: #fff;
-  background: red;
+  background: var(--standout-color);
   border-radius: 25px;
   margin-inline: 12px;
   padding: 5px 40px;
@@ -234,4 +234,120 @@
   margin-top: 42px;
   background: #fff;
   box-shadow: 10px 10px 31px 2px #1c1c1c;
+}
+
+/*Contact me Section */
+.contact-me-part {
+  color: #fff;
+}
+
+.relative-bg {
+  /* background: linear-gradient(
+    -90deg,
+    var(--primary-app-color),
+    var(--secondary-app-color)
+  ); */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -4;
+}
+.flex-rows {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar-option-mobile {
+  display: none;
+}
+
+/* Mobile view styling */
+@media (max-width: 750px) {
+  .navbar-option-mobile {
+    display: block;
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    z-index: 44;
+  }
+  .flex-rows {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .navbar-new {
+    position: fixed;
+    height: 100vh;
+    width: 60vw;
+    z-index: 33;
+    transform: translateX(700px);
+  }
+  .transitil-all {
+    transition: all 0.3s ease-in-out;
+  }
+  .navbar-fixed-new {
+    position: fixed;
+    height: 100vh;
+    width: 60vw;
+    z-index: 50;
+    /* transform: translateX(700px); */
+  }
+  .px-5 {
+    padding-inline: 0px;
+  }
+  .nav-items {
+    padding-block: 20px;
+  }
+  .brand-name {
+    font-size: 1.4rem;
+    padding-inline: 22px;
+    margin-top: 10px;
+  }
+  .bars {
+    height: 4px;
+    width: 40px;
+    background: #fff;
+    float: right;
+    z-index: 33;
+    transform: translateX(1px) translateY(-20px);
+  }
+  .bars::before {
+    display: block;
+    position: relative;
+    top: 9px;
+    content: "";
+    color: #fff;
+    width: 40px;
+    height: 4px;
+    background: #fff;
+  }
+  .bars::after {
+    display: block;
+    position: relative;
+    bottom: 12px;
+    content: "";
+    color: #fff;
+    width: 40px;
+    height: 4px;
+    background: #fff;
+  }
+  .Im-text {
+    font-size: 1.2rem;
+  }
+  .name-Im-text {
+    font-size: 20px;
+  }
+  .Im-text-enthusiastic {
+    font-size: 2rem;
+  }
+  .btn-hire-me {
+    font-size: 1rem;
+    padding: 5px 8px;
+  }
+  .btn-resume-me {
+    font-size: 1rem;
+    padding: 5px 8px;
+  }
+  .custom-img {
+    border: none;
+  }
 }

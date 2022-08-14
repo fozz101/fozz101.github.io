@@ -6,11 +6,13 @@ import Education from "./components/Education";
 import Work from "./components/Work";
 import Programming from "./components/Programming";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 function App() {
   const [education, setEducation] = useState(true);
   const [workHistory, setWorkHistory] = useState(false);
   const [programming, setProgramming] = useState(false);
   const [projects, setProjects] = useState(false);
+  const [openNav, setOpenNav] = useState(false);
   function SetAllFalse() {
     setEducation(false);
     setWorkHistory(false);
@@ -23,16 +25,33 @@ function App() {
   }
   return (
     <div className="App">
-      <div className="herosection px-10 py-5">
-        <nav className="d-flex flex-row justify-content-between">
-          <span className="brand-name"> Fozz101</span>
-          <div className="d-flex flex-row">
-            <span className="mx-4 nav-items">Home </span>
-            <span className="mx-4 nav-items">About me</span>
-            <span className="mx-4 nav-items">Resume </span>
-            <span className="mx-4 nav-items">Contact me</span>
-          </div>
-        </nav>
+      <div className="navbar-option-mobile bg-new">
+        <div className="d-flex flex-row justify-content-between">
+          <span className="brand-name d-flex align-items-center justify-content">
+            {" "}
+            Fedi GALFAT
+          </span>
+        </div>
+        <div className="bars mx-2" onClick={() => setOpenNav(!openNav)}>
+          {" "}
+        </div>
+      </div>
+      <nav
+        className={
+          !openNav
+            ? "d-flex bg-new px-5 navbar-new py-3 flex-rows transition-all"
+            : "d-flex bg-new px-5 navbar-fixed-new py-3 flex-rows transition-all"
+        }
+      >
+        <span className="brand-name"> Fozz101</span>
+        <div className="d-flex flex-rows">
+          <span className="mx-4 nav-items">Home </span>
+          <span className="mx-4 nav-items">About me</span>
+          <span className="mx-4 nav-items">Resume </span>
+          <span className="mx-4 nav-items">Contact me</span>
+        </div>
+      </nav>
+      <div className="herosection px-9 py-2">
         <div className="herosection-2 row justify-content-center">
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="d-flex flex-column justify-content-center Im-text-section">
@@ -46,7 +65,7 @@ function App() {
                 Knack of buikding applications with front and back end
                 operations
               </span>
-              <div className="d-flex flex-row justify-content-center mt-5">
+              <div className="d-flex flex-row justify-content-center py-3">
                 <button className="btn-hire-me">Hire me</button>
                 <button className="btn-resume-me">Get Resume</button>
               </div>
@@ -58,6 +77,7 @@ function App() {
             </div>
           </div>
         </div>
+        <br />
         <br />
         <br />
         <br />
@@ -177,6 +197,14 @@ function App() {
             {projects === true && <Projects />}
           </div>
         </div>
+      </div>
+      <div className="contact-me-part">
+        <div className="relative-bg"></div>
+      </div>
+      <div className="contact-inner-part d-flex flex-column">
+        <span className="about-me-text"> Contact Me</span>
+        <span className="why-text-sub mb-5"> Let's Keep in Touch</span>
+        <Contact />
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ export default function Programming() {
       <div className="row">
         {value.map((value, index) => {
           return (
-            <div className="col-lg-6 col-mg-6 col-sm-12 my-2">
+            <div className="col-lg-6 col-md-6 col-sm-12 my-2">
               <span className="language">{value.text}</span>
               <div className="progress-some">
                 <div
