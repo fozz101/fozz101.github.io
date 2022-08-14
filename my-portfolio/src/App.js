@@ -89,10 +89,11 @@ function App() {
           <div className="row justify-content-center shadow-lg my-5">
             <div className="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
               <lottie-player
+                className="lottie-1"
                 src="https://assets6.lottiefiles.com/packages/lf20_v1yudlrx.json"
                 background="transparent"
                 speed="1"
-                style={{ width: "500px", height: "500px" }}
+                // style={{ width: "500px", height: "500px" }}
                 loop
                 autoplay
               ></lottie-player>

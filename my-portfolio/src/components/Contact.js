@@ -6,16 +6,16 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   return (
-    <div>
+    <div className="test">
       <div className="contact-me-card row">
         <div className="col-lg-6 col-md-6 col-sm-12 left-contact px-2 py-2">
           <span className="get-in-touch mx-4 my-5"></span>
           <div className="py-5 d-flex justify-content-center">
             <lottie-player
-              src="https://assets8.lottiefiles.com/packages/lf20_cbgttmia.json"
+              src="https://assets2.lottiefiles.com/packages/lf20_pzakgdti.json"
               background="transparent"
               speed="1"
-              style={{ width: "300px", height: "300px" }}
+              style={{ width: "300px", height: "250px" }}
               loop
               autoplay
             ></lottie-player>

@@ -350,4 +350,37 @@
   .custom-img {
     border: none;
   }
+  .about-me-text {
+    font-size: 2.7rem;
+  }
+  .why-text-sub {
+    font-size: 1rem;
+  }
+  .aboutme-inside {
+    width: 91%;
+  }
+  .lottie-1 {
+    width: 500px;
+  }
+  .university-name {
+    font-size: 1rem;
+  }
+  .university-degree {
+    font-size: 0.9rem;
+  }
+  .resume-new-section {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .contact-me-card {
+    height: 100% !important;
+  }
+  .card-contact-right {
+    width: 100% !important;
+    height: 100% !important;
+    margin-bottom: 100%;
+  }
+  .test {
+    margin-top: -122px;
+  }
 }
