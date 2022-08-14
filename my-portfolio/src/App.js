@@ -1,18 +1,40 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import me from "./me.png";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Education from "./components/Education";
 import Work from "./components/Work";
 import Programming from "./components/Programming";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Typed from "typed.js";
 function App() {
   const [education, setEducation] = useState(true);
   const [workHistory, setWorkHistory] = useState(false);
   const [programming, setProgramming] = useState(false);
   const [projects, setProjects] = useState(false);
   const [openNav, setOpenNav] = useState(false);
+  const el = useRef(null);
+  const typed = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      strings: [
+        "Some <i>strings</i> are slanted",
+        "Some <strong>strings</strong> are bold",
+        "HTML characters &times; &copy;",
+      ],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true,
+    };
+
+    typed.current = new Typed(el.current, options);
+
+    return () => {
+      typed.current.destroy();
+    };
+  }, []);
   function SetAllFalse() {
     setEducation(false);
     setWorkHistory(false);
@@ -90,8 +112,10 @@ function App() {
               <span className="Im-text">
                 Hello, I'm <span className="name-Im-text">Fedi GALFAT</span>
               </span>
-              <span className="Im-text-enthusiastic py-2">
-                Enthusiastic Dev 😎
+              <span className="Im-text-enthusiastic py-2" ref={el}>
+                {
+                  //Enthusiastic Dev 😎
+                }
               </span>
               <span className="Im-text-subheading">
                 Knack of buikding applications with front and back end
