@@ -109,6 +109,19 @@ function App() {
         <div className="herosection-2 row justify-content-center">
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="d-flex flex-column justify-content-center Im-text-section">
+              <div className="colz">
+                <div className="colz-icon">
+                  <a href="https://fb.com/fedi.galfat" target="_blank">
+                    <i className="fa fa-facebook-square px-1"></i>
+                  </a>
+                  <a href="https://github.com/fozz101" target="_blank">
+                    <i className="fa-brands fa-github px-1"></i>
+                  </a>
+                  <a href="#" target="_blank">
+                    <i className="fa-brands fa-linkedin px-1"></i>
+                  </a>
+                </div>
+              </div>
               <span className="Im-text">
                 Hello, I'm <span className="name-Im-text">Fedi GALFAT</span>
               </span>

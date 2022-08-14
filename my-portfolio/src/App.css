@@ -265,6 +265,25 @@ a:hover {
 .navbar-option-mobile {
   display: none;
 }
+.fa-facebook-square {
+  color: #f0f8ff;
+}
+.fa-github {
+  color: #f0f8ff;
+}
+.fa-linkedin {
+  color: #f0f8ff;
+}
+
+.fa-facebook-square:hover {
+  color: var(--standout-color);
+}
+.fa-github:hover {
+  color: var(--standout-color);
+}
+.fa-linkedin:hover {
+  color: var(--standout-color);
+}
 
 /* Mobile view styling */
 @media (max-width: 750px) {
