@@ -1,14 +1,17 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import me from "./me.png";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 import Education from "./components/Education";
 import Work from "./components/Work";
 import Programming from "./components/Programming";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Typed from "typed.js";
-function App() {
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+
+const App = () => {
   const [education, setEducation] = useState(true);
   const [workHistory, setWorkHistory] = useState(false);
   const [programming, setProgramming] = useState(false);
@@ -45,6 +48,17 @@ function App() {
     SetAllFalse();
     func1(state1);
   }
+  const { i18n, t } = useTranslation(["home"]);
+
+  useEffect(() => {
+    if (localStorage.getItem("i18nextLng")?.length > 2) {
+      i18next.changeLanguage("en");
+    }
+  }, []);
+  const handleLanguageChange = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
+
   return (
     <div className="App">
       <div className="navbar-option-mobile bg-new">
@@ -74,7 +88,7 @@ function App() {
               setOpenNav(false);
             }}
           >
-            Home{" "}
+            {t("home")}{" "}
           </a>
           <a
             href="#aboutme"
@@ -83,7 +97,7 @@ function App() {
               setOpenNav(false);
             }}
           >
-            AboutMe
+            {t("aboutme1")}
           </a>
           <a
             href="#resume"
@@ -92,7 +106,7 @@ function App() {
               setOpenNav(false);
             }}
           >
-            Resume{" "}
+            {t("resume")}{" "}
           </a>
           <a
             href="#contactme"
@@ -101,8 +115,23 @@ function App() {
               setOpenNav(false);
             }}
           >
-            ContactMe
+            {t("contactme1")}
           </a>
+          <select
+            className="form-select"
+            value={localStorage.getItem("i18nextLng")}
+            onChange={handleLanguageChange}
+          >
+            <option className="select-items" value="en">
+              English
+            </option>
+            <option className="select-items" value="fr">
+              Français
+            </option>
+            <option className="select-items" value="de">
+              Deutsch
+            </option>
+          </select>
         </div>
       </nav>
       <div className="herosection px-9 py-2" id="home">
@@ -111,13 +140,21 @@ function App() {
             <div className="d-flex flex-column justify-content-center Im-text-section">
               <div className="colz">
                 <div className="colz-icon">
-                  <a href="https://fb.com/fedi.galfat" target="_blank">
+                  <a
+                    href="https://fb.com/fedi.galfat"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fa fa-facebook-square px-1"></i>
                   </a>
-                  <a href="https://github.com/fozz101" target="_blank">
+                  <a
+                    href="https://github.com/fozz101"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fa-brands fa-github px-1"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="#" target="_blank" rel="noreferrer">
                     <i className="fa-brands fa-linkedin px-1"></i>
                   </a>
                 </div>
@@ -136,10 +173,15 @@ function App() {
               </span>
               <div className="d-flex flex-row justify-content-center py-3">
                 <a href="#contactme" className="btn-hire-me">
-                  Hire me
+                  {t("hireme")}
                 </a>
-                <a href="" className="btn-resume-me" target="_blank">
-                  Get Resume
+                <a
+                  href=""
+                  className="btn-resume-me"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {t("getresume")}
                 </a>
               </div>
             </div>
@@ -159,9 +201,9 @@ function App() {
         <div className="d-flex flex-column">
           <span className="about-me-text" id="aboutme">
             {" "}
-            About me
+            {t("aboutme2")}
           </span>
-          <span className="why-text-sub"> Why Choose me ?</span>
+          <span className="why-text-sub"> {t("whychooseme")}</span>
           <div className="row justify-content-center shadow-lg my-5">
             <div className="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
               <lottie-player
@@ -196,15 +238,15 @@ function App() {
       </div>
       <div className="resume-outer-section d-flex flex-column">
         <span className="about-me-text" id="resume">
-          Resume
+          {t("resume")}
         </span>
-        <span className="why-text-sub">My Formal Bio Details</span>
+        <span className="why-text-sub">{t("myformalbiodetails")}</span>
         <div
           className="resume-new-section row"
           style={{ width: "70%", marginInline: "auto", height: "400px" }}
         >
           <div className="col-lg-4 col-md-4 resume-left-section d-flex px-0 shadow-lg flex-row">
-            <div className="d-flex flex-column bg-new text-white">
+            <div className="d-flex flex-column bg-new text-white noselect">
               <span className="icons-span">
                 <i class="fa-solid fa-graduation-cap"></i>
               </span>
@@ -218,7 +260,7 @@ function App() {
                 <i class="fa-solid fa-list-check"></i>
               </span>
             </div>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column noselect">
               <span
                 className={
                   education === false
@@ -281,12 +323,12 @@ function App() {
         <div className="relative-bg"></div>
       </div>
       <div className="contact-inner-part d-flex flex-column">
-        <span className="about-me-text"> Contact Me</span>
-        <span className="why-text-sub mb-5"> Let's Keep in Touch</span>
+        <span className="about-me-text"> {t("contactme2")}</span>
+        <span className="why-text-sub mb-5"> {t("letskeepintouch")}</span>
         <Contact />
       </div>
     </div>
   );
-}
+};
 
 export default App;
