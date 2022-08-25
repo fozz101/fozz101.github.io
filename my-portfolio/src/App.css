@@ -431,4 +431,8 @@ a:hover {
   .test {
     margin-top: -122px;
   }
+  .form-select {
+    padding-block: 20px !important;
+    margin-left: 14px !important;
+  }
 }
