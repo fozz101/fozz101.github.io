@@ -167,10 +167,7 @@ const App = () => {
                   //Enthusiastic Dev 😎
                 }
               </span>
-              <span className="Im-text-subheading">
-                Knack of buikding applications with front and back end
-                operations
-              </span>
+              <span className="Im-text-subheading">Short Desc about me</span>
               <div className="d-flex flex-row justify-content-center py-3">
                 <a href="#contactme" className="btn-hire-me">
                   {t("hireme")}
