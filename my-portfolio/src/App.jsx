@@ -79,7 +79,7 @@ const App = () => {
             : "d-flex bg-new px-5 navbar-fixed-new py-3 flex-rows transition-all"
         }
       >
-        <span className="brand-name"> Fozz101</span>
+        <span className="brand-name"> Fozz101 (Under Construction)</span>
         <div className="d-flex flex-rows">
           <a
             href="#home"
