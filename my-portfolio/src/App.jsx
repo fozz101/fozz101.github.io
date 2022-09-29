@@ -314,7 +314,10 @@ const App = () => {
           <div className="col-lg-8 col-md-4 resume-right-section">
             {education === true && <Education />}
             {workHistory === true && <Work />}
-            {programming === true && <Programming />}
+            {programming === true}{" "}
+            {
+              //&&<Programming />
+            }
             {projects === true && <Projects />}
           </div>
         </div>
