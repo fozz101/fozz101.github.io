@@ -167,7 +167,9 @@ const App = () => {
                   //Enthusiastic Dev 😎
                 }
               </span>
-              <span className="Im-text-subheading">Short Desc about me</span>
+              <span className="Im-text-subheading">
+                Short Desc about me test
+              </span>
               <div className="d-flex flex-row justify-content-center py-3">
                 <a href="#contactme" className="btn-hire-me">
                   {t("hireme")}
