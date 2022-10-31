@@ -329,6 +329,25 @@ const App = () => {
         <span className="why-text-sub mb-5"> {t("letskeepintouch")}</span>
         <Contact />
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div className="footersection text-center p-3">
+        <span className="footer-text">© 2022 Copyright </span>
+        <a
+          className="text-white"
+          href="https://github.com/fozz101"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Fedi GALFAT
+        </a>
+      </div>
     </div>
   );
 };
